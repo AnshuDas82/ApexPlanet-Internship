@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                <small class="form-text">Please enter your full name.</small>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                <small class="form-text">Please enter a valid email address.</small>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
+

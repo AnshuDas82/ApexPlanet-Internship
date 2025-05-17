@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Gallery</title>
+    <style>
+        .gallery-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+        }
+        .gallery-title {
+            font-size: 1rem;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .upload-button-wrapper {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .upload-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem;
+            background-color: #74ffb7;
+            color: #000000;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;   
+        }
+
+        .upload-button-icon {
+            margin-right: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke-width: 2;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+          
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: rgba(255, 157, 157, 0.8);
+            color: #ffffff;
+            border-radius: 9999px;
+            padding: 0.375rem;
+            cursor: pointer;
+            opacity: 0;
+           
+            border: none;
+        }
+        .delete-button {
+            opacity: 1;
+        }
+       
+        .delete-button-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke-width: 2.5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h1 class="gallery-title">Image Upload Gallery</h1>
+        <div class="upload-button-wrapper">
+            <input type="file" id="image-upload" multiple accept="image/*" class="hidden">
+        </div>
+        <div id="gallery" class="gallery">
+            </div>
+    </div>
+    <script>
+        const imageUpload = document.getElementById('image-upload');
+        const gallery = document.getElementById('gallery');
+
+        imageUpload.addEventListener('change', (event) => {
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (file.type.startsWith('image/')) {
+                    addImageToGallery(file);
+                } else {
+                    alert('File type not supported. Please upload an image.');
+                }
+            }
+            imageUpload.value = '';
+        });
+
+        function addImageToGallery(file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const imageUrl = event.target.result;
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = 'Uploaded Image';
+
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-button';
+                deleteButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="delete-button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>`;
+
+                deleteButton.addEventListener('click', () => {
+                    gallery.removeChild(galleryItem);
+                });
+
+                galleryItem.appendChild(img);
+                galleryItem.appendChild(deleteButton);
+                gallery.appendChild(galleryItem);
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>
