@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshu Kumar Das - Portfolio & Apps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Anshu Kumar Das</a>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#todo-app" class="nav-link">To-Do List</a></li>
+                    <li class="nav-item"><a href="#product-listing" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <img src="WhatsApp Image 2024-11-04 at 21.15.34_ef7cd651.jpg" alt="Anshu Kumar Das" class="profile-img">
+            <div class="about-content">
+                <p>
+                    Hello! I'm Anshu Kumar Das, a dedicated and enthusiastic 5th-semester student pursuing my B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence at Motihari College of Engineering, Motihari.
+                </p>
+                <p>
+                    I am passionate about exploring new technologies and expanding my skillset, particularly in web development. I'm currently enhancing my skills through a 45-day online internship in Web Development at Apex Planet. This experience is providing me with valuable hands-on knowledge and deepening my understanding of modern web technologies.
+                </p>
+                <p>
+                    My goal is to leverage my AI background with strong web development skills to build innovative and impactful applications. I am eager to learn, contribute, and grow in the ever-evolving field of technology.
+                </p>
+            </div>
+            <h3 class="section-title" style="font-size: 1.8rem; margin-top: 60px; margin-bottom: 30px;">My Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">HTML5</div>
+                <div class="skill-item">CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">C++</div>
+                <div class="skill-item">Machine Learning Basics</div>
+                <div class="skill-item">Web Development</div>
+                <div class="skill-item">Responsive Design</div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://placehold.co/300x200/2980b9/ffffff?text=Project+1" alt="Project 1" class="project-img">
+                    <div class="project-info">
+                        <h3>Dynamic Image Gallery</h3>
+                        <p>A web application allowing users to dynamically add and remove images, showcasing interactive DOM manipulation and basic form handling.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/300x200/2980b9/ffffff?text=Project+2" alt="Project 2" class="project-img">
+                    <div class="project-info">
+                        <h3>Basic Calculator</h3>
+                        <p>A simple calculator web application built with HTML, CSS, and JavaScript, demonstrating fundamental arithmetic operations and UI design.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="todo-app" class="section">
+            <h2 class="section-title">My To-Do List</h2>
+            <div class="todo-input-container">
+                <input type="text" id="todo-input" class="todo-input" placeholder="Add a new task...">
+                <button id="add-todo-button" class="add-todo-button">Add Task</button>
+            </div>
+            <ul id="todo-list" class="todo-list">
+                </ul>
+        </section>
+
+        <section id="product-listing" class="section">
+            <h2 class="section-title">Product Catalog</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="books">Books</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="price-filter">Max Price:</label>
+                    <input type="number" id="price-filter" placeholder="e.g., 500">
+                </div>
+                <div class="control-group">
+                    <label for="sort-by">Sort By:</label>
+                    <select id="sort-by">
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="price-asc">Price (Low to High)</option>
+                        <option value="price-desc">Price (High to Low)</option>
+                    </select>
+                </div>
+            </div>
+            <div id="product-grid" class="product-grid">
+                </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Me</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
