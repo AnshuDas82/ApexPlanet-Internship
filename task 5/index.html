@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dynamic Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <style>
+        
+    </style> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="blog-title" id="home-link">My Awesome Blog</a>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link" id="view-posts-link">View Posts</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="create-new-post-link">Create New Post</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="about-blog-link">About This Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="blog-listing-section">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blog-controls">
+                <input type="text" id="search-input" placeholder="Search posts by title or content...">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="technology">Technology</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="travel">Travel</option>
+                    <option value="food">Food</option>
+                    <option value="education">Education</option>
+                </select>
+            </div>
+            <div id="blog-posts-grid" class="blog-grid">
+            </div>
+            <p id="no-posts-message" style="text-align: center; color: #666; margin-top: 30px;" class="hidden">No posts found.</p>
+        </section>
+
+        <section id="create-post-section" class="hidden">
+            <h2 class="section-title">Create New Blog Post</h2>
+            <form id="new-post-form">
+                <div class="form-group">
+                    <label for="post-title">Title:</label>
+                    <input type="text" id="post-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-author">Author:</label>
+                    <input type="text" id="post-author" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-category">Category:</label>
+                    <select id="post-category" required>
+                        <option value="">Select a Category</option>
+                        <option value="technology">Technology</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="travel">Travel</option>
+                        <option value="food">Food</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="post-image-url">Image URL (Optional):</label>
+                    <input type="url" id="post-image-url" placeholder="e.g., https://example.com/image.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Content:</label>
+                    <textarea id="post-content" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Publish Post</button>
+            </form>
+        </section>
+
+        <section id="single-post-view" class="hidden">
+            <div class="post-header">
+                <h2 class="post-title" id="single-post-title"></h2>
+                <p class="post-meta" id="single-post-meta"></p>
+            </div>
+            <img src="" alt="Post Image" class="post-image" id="single-post-image">
+            <div class="post-content" id="single-post-content"></div>
+            <button class="back-button" id="back-to-posts">← Back to All Posts</button>
+        </section>
+
+        <section id="about-blog-section" class="hidden">
+            <h2 class="section-title">About This Blog</h2>
+            <p>Welcome to My Dynamic Blog! This is a simple, single-page blogging application built with HTML, CSS, and JavaScript.</p>
+            <p>It demonstrates dynamic content creation, local storage for data persistence, filtering, searching, and lazy loading of images. You can create new posts, view them individually, and filter through them by category or search by keywords.</p>
+            <p>This project aims to showcase fundamental web development concepts in a practical and efficient manner.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
